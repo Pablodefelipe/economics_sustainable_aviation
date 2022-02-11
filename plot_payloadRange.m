@@ -47,6 +47,6 @@ box on
 grid on
 set(gca,'FontSize',18)
 xlabel('Range (km)')
-ylabel('Paylaod (kg)')
+ylabel('Payload (kg)')
 axis([0,2500,0,1000])
 end
