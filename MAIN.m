@@ -13,7 +13,7 @@ rhoLH2_kgm3  = 70.85;
 %% Define Aircraft and its retrofits
 % Could we use a define function? We could
 % Inputs from POH
-ACFT.name = 'Outlander';
+ACFT.name = 'PA-31 Navajo';
 % Define general parameters 
 ACFT.wingArea_m2 = 229/(3.28^2);      % Reference wing area in m^2
 ACFT.aspectRatio = 7.22; 
