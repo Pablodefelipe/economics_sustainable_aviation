@@ -21,6 +21,7 @@ avgasSpecificEnergy_kWhkg = ACFT.EnergyStorage.avgasSpecificEnergy_kWhkg;
 % Unwrap Structure
 MTOW_kg                         = Weight.MTOW_kg;
 baselineEmpty_kg                = Weight.baselineEmpty_kg;
+maxPayload_kg                   = Weight.maxPayload_kg;
 crew_kg                         = Weight.crew_kg;
 passenger_kg                    = Weight.passenger_kg;
 passenger_n                     = Weight.passenger_n;
@@ -55,7 +56,7 @@ Baseline.emptyWeight_kg     = baselineEmpty_kg+Baseline.fuelEngine_kg+Baseline.e
 Baseline.totalPropulsion_kg = Baseline.fuelEngine_kg+Baseline.electricMotor_kg+...
     Baseline.battery_kg  + Baseline.electricSystems_kg + Baseline.fuelTank_kg;
 Baseline.operationalEmptyWeight_kg = Baseline.emptyWeight_kg+crew_kg;
-Baseline.zeroFuelWeight_kg  = Baseline.operationalEmptyWeight_kg + passenger_n*passenger_kg; 
+Baseline.zeroFuelWeight_kg  = Baseline.operationalEmptyWeight_kg + maxPayload_kg; 
 Baseline.fuelWeight_kg      = MTOW_kg-Baseline.zeroFuelWeight_kg;
 EnergyStorage.Baseline.fuelWeight_kg = Baseline.fuelWeight_kg;
 EnergyStorage.Baseline.fuelEnergy_kWh= Baseline.fuelWeight_kg*...

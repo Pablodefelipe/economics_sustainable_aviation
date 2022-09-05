@@ -17,7 +17,7 @@ function PayloadRange = calculate_payloadRange(ACFT,Mission,MissionPerformance);
 % Unwrap structures
 Weight = ACFT.Weight;
 EnergyStorage = ACFT.EnergyStorage;
-payload_kg = Weight.payload_kg;
+%payload_kg = Weight.payload_kg;
 MTOW_kg    = Weight.MTOW_kg;
 avgasSpecificEnergy_kWhkg = EnergyStorage.avgasSpecificEnergy_kWhkg;
 rhoCruise_kgm3 = Mission.Rho_kgm3.cruise;
@@ -28,6 +28,7 @@ maxFuelWeight_kg = EnergyStorage.Baseline.maxFuelWeight_kg;
 fuelWeight_kg    = Weight.Baseline.fuelWeight_kg;
 fuelAdditionWeight_kg     = maxFuelWeight_kg-fuelWeight_kg;
 operationalEmptyWeight_kg = Weight.Baseline.operationalEmptyWeight_kg;
+payload_kg = MTOW_kg-operationalEmptyWeight_kg-fuelWeight_kg;
 Baseline = calculate_payloadRangeParams(operationalEmptyWeight_kg,...
     maxFuelWeight_kg,fuelWeight_kg,fuelAdditionWeight_kg,payload_kg,MTOW_kg);
 Baseline = calculate_rangeBaseline(Baseline,Mission,...
@@ -38,6 +39,7 @@ maxFuelWeight_kg = EnergyStorage.Parallel.maxFuelWeight_kg;
 fuelWeight_kg    = Weight.Parallel.fuelWeight_kg;
 fuelAdditionWeight_kg     = maxFuelWeight_kg-fuelWeight_kg;
 operationalEmptyWeight_kg = Weight.Parallel.operationalEmptyWeight_kg;
+payload_kg = Weight.payload_kg;
 Parallel = calculate_payloadRangeParams(operationalEmptyWeight_kg,...
     maxFuelWeight_kg,fuelWeight_kg,fuelAdditionWeight_kg,payload_kg,MTOW_kg);
  Parallel = calculate_rangeParallel(Parallel,Mission,...
@@ -48,6 +50,7 @@ maxFuelWeight_kg = EnergyStorage.Series.maxFuelWeight_kg;
 fuelWeight_kg    = Weight.Series.fuelWeight_kg;
 fuelAdditionWeight_kg     = maxFuelWeight_kg-fuelWeight_kg;
 operationalEmptyWeight_kg = Weight.Series.operationalEmptyWeight_kg;
+payload_kg = Weight.payload_kg;
 Series = calculate_payloadRangeParams(operationalEmptyWeight_kg,...
     maxFuelWeight_kg,fuelWeight_kg,fuelAdditionWeight_kg,payload_kg,MTOW_kg);
 Series = calculate_rangeSeries(Series,Mission,MissionPerformance,ACFT);

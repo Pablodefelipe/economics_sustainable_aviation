@@ -1,6 +1,6 @@
 function [] = plot_weight(ACFT)
 % Function:
-%   plot_weight
+%   plot_weight(ACFT)
 %
 % Description: 
 %   Plot the weights of the retrofits in a bar chart format

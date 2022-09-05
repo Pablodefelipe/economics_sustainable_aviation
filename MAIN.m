@@ -21,7 +21,7 @@ ACFT.engineNum   = 2;
 ACFT.maxFuelVolume_m3  = 190*0.003785;% Maximum Volume inside the original tanks
 ACFT.Weight.MTOW_kg    = 6500/2.205;  % MTOW of aircraft
 ACFT.Weight.EW_kg      = 4003/2.205;  % Operational empty weight of aircraft, inluding unusable fuel, oil and full operating fluids
-
+ACFT.Weight.maxPayload_kg= 2070/2.205;% Maximum Payload weight for original
 % Define performance parameters
 
 % Aero parameters: cd0 and k

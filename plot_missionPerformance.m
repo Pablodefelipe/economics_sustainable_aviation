@@ -1,6 +1,6 @@
 function [] = plot_missionPerformance(ACFT,MissionPerformance)
 % Function:
-%   plot_missionPerformance
+%   plot_missionPerformance(ACFT,MissionPerformance)
 %
 % Description: 
 %   Plot the mission performance in a bar chart format

@@ -1,6 +1,6 @@
 function [] = plot_payloadRange(PayloadRange)
 % Function:
-%   plot_payloadRange
+%   plot_payloadRange(PayloadRange)
 %
 % Description: 
 %   Plot the maximum range and payload for each of the retrofits
@@ -42,7 +42,7 @@ pElectric2 = plot(Electric.range_km(2,:),Electric.payloadWeight_kg,...
 %legend([pBaseline,pParallel,pSeries,pHydrogen,pElectric1,pElectric2],...
     names = {'Baseline','Parallel','Series','Hydrogen','Electric (400Wh/kg)',...
     'Electric(600Wh/kg)'};
-columnlegend(2, names, 'location','northEast');
+legend(names, 'location','northEast','NumColumns',2');
 box on
 grid on
 set(gca,'FontSize',18)

@@ -1,6 +1,6 @@
 function [] = plot_cost(ACFT)
 % Function:
-%   plot_cost
+%   plot_cost(ACFT)
 %
 % Description: 
 %   Plot the mission performance in a bar chart format
